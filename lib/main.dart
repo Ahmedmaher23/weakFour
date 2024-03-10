@@ -14,19 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      routes: {
-        "ListViewScreen": (context) => ListViewScreen(),
-        "GridViewScreen": (context) => const GridViewScreen(),
-      },
+      home: const MyHomePage(),
+
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -37,15 +33,8 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   TabController? myController;
   int _currentIndex = 0;
-  PageController? pageViewController;
   List myWidgetList = [ListViewScreen(),  GridViewScreen()];
-String appBarTitle ="";
-  @override
-  void initState() {
-    myController = TabController(length: 4, vsync: this);
-    // TODO: implement initState
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
